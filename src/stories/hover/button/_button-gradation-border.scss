@@ -1,0 +1,45 @@
+%c-btn {
+  display: block;
+  width: 300px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+$BTN_COLOR: #a42ecf;
+
+.c-btn-norborder {
+  @extend %c-btn;
+}
+
+.c-hover__gradation-border {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, #5e8af3 25%, #f33ddf 75%, #5e8af3);
+  background-position-x: -40px;
+  background-origin: border-box;
+  background-size: 110%;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    content: "";
+    background: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    animation: gradation-border 2s linear infinite;
+  }
+}
+
+@keyframes gradation-border {
+  to {
+    background-position-x: 300px;
+  }
+}

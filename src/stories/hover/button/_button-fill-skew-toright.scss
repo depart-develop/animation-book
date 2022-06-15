@@ -1,0 +1,62 @@
+%c-btn {
+  display: block;
+  width: 300px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+$BTN_COLOR: #a42ecf;
+
+.c-btn {
+  @extend %c-btn;
+  border: 1px solid $BTN_COLOR;
+}
+
+%c-hover__fill {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  color: $BTN_COLOR;
+  cursor: pointer;
+  background-color: #fff;
+  transition: 0.5s color cubic-bezier(0, 0.82, 0.57, 1.01);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 120%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    transition: 0.5s transform cubic-bezier(0, 0.82, 0.57, 1.01);
+    transform: scaleX(0);
+    transform-origin: left top;
+  }
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.c-hover__fill-skew-toright {
+  @extend %c-hover__fill;
+
+  &::before {
+    transform: scaleX(0) skewX(-25deg);
+    transform-origin: right top;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1) skewX(-25deg);
+      transform-origin: left top;
+    }
+  }
+}

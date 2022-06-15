@@ -1,0 +1,40 @@
+%c-btn {
+  display: block;
+  width: 300px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+$BTN_COLOR: #a42ecf;
+
+.c-btn-gradation {
+  @extend %c-btn;
+  color: #fff;
+}
+
+.c-hover__gradation {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #5e8af3 15%, #f33ddf);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
+    transition: 0.5s opacity;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+%c-card {
+  display: inline-block;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.c-card__txt {
+  padding-top: 10px;
+}
+
+.c-card__img {
+  overflow: hidden;
+}
+
+.c-card {
+  @extend %c-card;
+
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
+}
+
+.c-card-hover--grayscale {
+  cursor: pointer;
+
+  img {
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+  }
+
+  &:hover {
+    img {
+      filter: grayscale(0);
+    }
+  }
+}

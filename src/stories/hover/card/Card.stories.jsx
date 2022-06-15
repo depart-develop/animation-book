@@ -5,21 +5,21 @@ import { Card } from './Card';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 // Storyで表示するScssの読み込み
-import scssDefault from '!!raw-loader!./card-default.scss';
-import scssFloat from '!!raw-loader!./card-float.scss';
-import scssPush from '!!raw-loader!./card-push.scss';
-import scssGrayscale from '!!raw-loader!./card-grayscale.scss';
-import scssBright from '!!raw-loader!./card-bright.scss';
-import scssZoom from '!!raw-loader!./card-zoom.scss';
-import scssTxt from '!!raw-loader!./card-txt.scss';
-import scssSlidetxt from '!!raw-loader!./card-slidetxt.scss';
+import scss from '!!raw-loader!./card.scss';
+import scssFloat from '!!raw-loader!./_card-float.scss';
+import scssPush from '!!raw-loader!./_card-push.scss';
+import scssGrayscale from '!!raw-loader!./_card-grayscale.scss';
+import scssBright from '!!raw-loader!./_card-bright.scss';
+import scssZoom from '!!raw-loader!./_card-zoom.scss';
+import scssTxt from '!!raw-loader!./_card-txt.scss';
+import scssSlidetxt from '!!raw-loader!./_card-slidetxt.scss';
 
 // ドキュメント（コンポーネントのタイプ一覧）の読み込み
 import CardDoc from './Card.mdx'
 
 const parameters = {
   componentSource: {
-    code: scssDefault,
+    code: scss,
     language: 'scss',
   },
   docs: {
@@ -37,7 +37,7 @@ export default {
 const Template = (args) => <Card {...args} />;
 
 // デフォルトのStoryを出力
-export const Default = Template.bind({});
+// export const Default = Template.bind({});
 
 // FloatのStoryを出力
 export const Float = Template.bind({});
@@ -50,7 +50,6 @@ Float.parameters = {
   }
 };
 Float.args = {
-  label: 'Card',
   type: 'float',
 };
 
@@ -63,7 +62,6 @@ Push.parameters = {
   }
 };
 Push.args = {
-  label: 'Card',
   type: 'push',
 };
 
@@ -76,7 +74,6 @@ Grayscale.parameters = {
   }
 };
 Grayscale.args = {
-  label: 'Card',
   type: 'grayscale',
 };
 
@@ -89,7 +86,6 @@ Bright.parameters = {
   }
 };
 Bright.args = {
-  label: 'Card',
   type: 'bright',
 };
 
@@ -102,7 +98,6 @@ Zoom.parameters = {
   }
 };
 Zoom.args = {
-  label: 'Card',
   zoom: true,
 };
 
@@ -115,8 +110,7 @@ Txt.parameters = {
   }
 };
 Txt.args = {
-  label: 'Card',
-  shadow: true,
+  base: 'c-card__shadow',
   zoom: true,
   type: 'txt',
   moreText: true,
@@ -131,8 +125,7 @@ Slidetxt.parameters = {
   }
 };
 Slidetxt.args = {
-  label: 'Card',
-  shadow: true,
+  base: 'c-card__shadow',
   zoom: true,
   type: 'slidetxt',
   moreText: true,

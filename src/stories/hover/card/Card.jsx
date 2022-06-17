@@ -30,11 +30,11 @@ export const Card = ({ base, type, zoom, moreText, ...props }) => {
     <a className={classNames.join(' ')}
     {...props}
     >
-      <div class="c-card__img">
+      <div className="c-card__img">
         <img src={dummyImage} alt=""/>
-        {moreText && <div class="c-card-hover--txt__more">More</div>}
+        {moreText && <div className="c-card-hover--txt__more">More</div>}
       </div>
-      <div class="c-card__txt">ダミーダミーダミーダミー</div>
+      <div className="c-card__txt">ダミーダミーダミーダミー</div>
     </a>
   );
 };

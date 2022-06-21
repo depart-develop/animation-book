@@ -7,14 +7,12 @@ import './card.scss';
 import dummyImage from './img/dummy.jpg';
 
 // 引数で条件を受け取る
-export const Card = ({ shadow, type, zoom, moreText, ...props }) => {
+export const Card = ({ base, type, zoom, moreText, ...props }) => {
   const classNames = [];
   
-  // 影付きカード
-  if (shadow) {
-    classNames.push('c-card__shadow');
-  } else {
-    classNames.push('c-card');
+  // ベースのクラス
+  if (base) {
+    classNames.push(base);
   }
   
   // アニメーションのサブクラス（Modifier）
@@ -32,18 +30,18 @@ export const Card = ({ shadow, type, zoom, moreText, ...props }) => {
     <a className={classNames.join(' ')}
     {...props}
     >
-      <div class="c-card__img">
+      <div className="c-card__img">
         <img src={dummyImage} alt=""/>
-        {moreText && <div class="c-card-hover--txt__more">More</div>}
+        {moreText && <div className="c-card-hover--txt__more">More</div>}
       </div>
-      <div class="c-card__txt">ダミーダミーダミーダミー</div>
+      <div className="c-card__txt">ダミーダミーダミーダミー</div>
     </a>
   );
 };
 
 // デフォルトの状態
 Card.defaultProps = {
-  shadow: false,
+  base: 'c-card',
   type: '',
   zoom: false,
 };

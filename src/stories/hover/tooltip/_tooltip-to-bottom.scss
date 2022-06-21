@@ -1,0 +1,46 @@
+.c-tooltip-wrap {
+  position: relative;
+
+  &:hover {
+    .c-tooltip {
+      opacity: 1;
+    }
+
+    .c-tooltip--to-bottom {
+      bottom: 0;
+    }
+  }
+}
+
+.c-tooltip {
+  position: absolute;
+  bottom: 0;
+  display: inline-block;
+  padding: 5px 10px;
+  color: #a42ecf;
+  pointer-events: none;
+  background: #edcef8;
+  border-radius: 5px;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    display: block;
+    content: "";
+    border-right: 10px solid transparent;
+    border-bottom: 8px solid #edcef8;
+    border-left: 10px solid transparent;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+
+.c-tooltip--to-bottom {
+  bottom: 15px;
+}

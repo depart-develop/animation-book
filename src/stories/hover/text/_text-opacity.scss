@@ -1,0 +1,17 @@
+%c-txt {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.c-txt {
+  @extend %c-txt;
+}
+
+.c-hover__opacity {
+  cursor: pointer;
+  transition: 0.3s opacity;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

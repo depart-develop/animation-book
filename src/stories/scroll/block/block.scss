@@ -1,3 +1,12 @@
+.l-scroll-wrapper {
+  height: 1000px;
+  padding-top: 500px;
+}
+
+.l-block-wrapper {
+  display: flex;
+}
+
 .p-scroll-box {
   border-top: #a42ecf solid 2px;
   transition: 0.3s background-color;
@@ -5,20 +14,6 @@
   &.is-active {
     background: #edcef8;
   }
-}
-
-.l-scroll-wrapper {
-  height: 2000px;
-  padding-top: 1000px;
-}
-
-.l-block-wrapper {
-  display: flex;
-}
-
-.l-black {
-  color: #fff;
-  background: #a42ecf;
 }
 
 .p-scroll-box {

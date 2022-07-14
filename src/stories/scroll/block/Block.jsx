@@ -34,7 +34,7 @@ export const Block = ({ base, type, ...props }) => {
           context.trigger?.classList.remove("is-active");
         },
         scroller: document.body,
-        markers: true,
+        // markers: true,
       });
     }
   }, []);
@@ -42,8 +42,7 @@ export const Block = ({ base, type, ...props }) => {
   return (
     <div className='l-scroll-wrapper'>
       <div className={`${classNames.join(' ')}`} {...props} ref={scrollBox}>
-        .gasp-st-top-top<br/>
-        ↑の線（この要素自体。.gasp-st-top-topを持つ要素）が、windowの一番上に来たらis-activeがつく
+        ↑の線（この要素自体）が画面の中央まで来たらアニメーションする
       </div>
     </div>
   );

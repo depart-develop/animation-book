@@ -1,0 +1,45 @@
+.p-scrolldown {
+  position: relative;
+  display: inline-block;
+
+  span {
+    color: #333;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  &--line {
+    padding-bottom: 40px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 1px;
+      height: 30px;
+      background: linear-gradient(
+        to bottom,
+        rgba(#333, 1) 50%,
+        rgba(#333, 0) 50%
+      );
+      background-position: 0 0;
+      background-size: 100% 200%;
+      animation: down-line 2.2s cubic-bezier(0.76, 0, 0.3, 1) forwards infinite;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+@keyframes down-line {
+  0% {
+    background-position: 0 100%;
+  }
+  70% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -100%;
+  }
+}

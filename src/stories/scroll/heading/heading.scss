@@ -1,0 +1,134 @@
+.l-scroll-wrapper {
+  height: 1000px;
+  padding-top: 500px;
+}
+
+.p-scroll-heading {
+  font-size: 60px;
+  letter-spacing: 0.05em;
+  color: #333;
+
+  &--shadow {
+    transition: text-shadow 0.5s;
+
+    &.is-active {
+      text-shadow: 4px 4px 0px #fff, 7px 7px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &--draw {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-shadow: #333 1px 1px 0, #333 -1px -1px 0, #333 -1px 1px 0,
+      #333 1px -1px 0, #333 0px 1px 0, #333 0 -1px 0, #333 -1px 0 0,
+      #333 1px 0 0;
+    transition: text-shadow 0.5s 0.3s, color 0.5s 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      left: -15px;
+      width: calc(100% + 30px);
+      height: 1px;
+    }
+    &::before {
+      top: 8px;
+      border-top: 1px solid rgba(#333, 0.3);
+      transform: scaleX(0);
+    }
+    &::after {
+      bottom: 13px;
+      border-bottom: 1px solid rgba(#333, 0.3);
+      transform: scaleX(0);
+    }
+
+    > span {
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: -5px;
+        width: 1px;
+        height: 100%;
+      }
+      &::before {
+        left: 0;
+        border-left: 1px solid rgba(#333, 0.3);
+        transform: scaleY(0);
+      }
+      &::after {
+        right: 0;
+        border-right: 1px solid rgba(#333, 0.3);
+        transform: scaleY(0);
+      }
+    }
+
+    &.is-active {
+      color: #333;
+      text-shadow: 0 0 transparent;
+      transition: text-shadow 0.5s 1.2s, color 0.5s 1.2s;
+
+      &::before {
+        animation: 1.1s 0.4s forwards cubic-bezier(0, 0, 0.24, 1)
+          draw-title-row-line;
+      }
+      &::after {
+        animation: 0.8s 0.7s forwards reverse cubic-bezier(0, 0, 0.24, 1)
+          draw-title-row-line;
+      }
+
+      > span {
+        &::before {
+          animation: 1s 0.5s forwards cubic-bezier(0, 0, 0.24, 1)
+            draw-title-col-line;
+        }
+        &::after {
+          animation: 0.7s 0.8s forwards reverse cubic-bezier(0, 0, 0.24, 1)
+            draw-title-col-line;
+        }
+      }
+    }
+  }
+}
+
+@keyframes draw-title-row-line {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  25% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  75% {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes draw-title-col-line {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  25% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  75% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}

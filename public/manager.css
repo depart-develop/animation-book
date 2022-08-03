@@ -1,0 +1,8 @@
+#tabbutton-source-code {
+  font-size: 0;
+}
+
+#tabbutton-source-code::before {
+  content: "SCSS";
+  font-size: 13px;
+}

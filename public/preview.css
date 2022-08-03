@@ -2,6 +2,10 @@
   margin: 80px 0 50px !important;
 }
 
+.sbdocs-h3 {
+  margin: 30px 0 10px !important;
+}
+
 div[id^="story--"] {
   margin: 50px 0;
 }

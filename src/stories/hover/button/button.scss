@@ -1,0 +1,291 @@
+%c-btn {
+  display: block;
+  width: 300px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+$BTN_COLOR: #a42ecf;
+
+.c-btn {
+  @extend %c-btn;
+  border: 1px solid $BTN_COLOR;
+}
+
+.c-btn-gradation {
+  @extend %c-btn;
+  color: #fff;
+}
+
+.c-btn-norborder {
+  @extend %c-btn;
+}
+
+.c-hover__inversion {
+  color: $BTN_COLOR;
+  cursor: pointer;
+  background-color: #fff;
+  transition: 0.3s background-color;
+
+  &:hover {
+    color: #fff;
+    background-color: $BTN_COLOR;
+  }
+}
+
+%c-hover__fill {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  color: $BTN_COLOR;
+  cursor: pointer;
+  background-color: #fff;
+  transition: 0.5s color cubic-bezier(0, 0.82, 0.57, 1.01);
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 120%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    transition: 0.5s transform cubic-bezier(0, 0.82, 0.57, 1.01);
+    transform: scaleX(0);
+    transform-origin: left top;
+  }
+
+  &:hover {
+    color: #fff;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.c-hover__fill,
+.c-hover__fill-toright,
+.c-hover__fill-skew,
+.c-hover__fill-skew-toright {
+  @extend %c-hover__fill;
+}
+
+.c-hover__fill-toright {
+  &::before {
+    transform: scaleX(0);
+    transform-origin: right top;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1);
+      transform-origin: left top;
+    }
+  }
+}
+
+.c-hover__fill-skew {
+  &::before {
+    transform: scaleX(0) skewX(-25deg);
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1) skewX(-25deg);
+    }
+  }
+}
+
+.c-hover__fill-skew-toright {
+  &::before {
+    transform: scaleX(0) skewX(-25deg);
+    transform-origin: right top;
+  }
+
+  &:hover {
+    &::before {
+      transform: scaleX(1) skewX(-25deg);
+      transform-origin: left top;
+    }
+  }
+}
+
+.c-hover__bulk-up {
+  cursor: pointer;
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.c-hover__float {
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.2);
+    transform: scale(1.05);
+  }
+}
+
+.c-hover__double-border {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s color;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    transition: 0.3s width, 0.3s height;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    &::after {
+      width: calc(100% - 6px);
+      height: calc(100% - 6px);
+    }
+  }
+}
+
+.c-hover__card {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  cursor: pointer;
+  background: $BTN_COLOR;
+  transition: 0.5s color;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #fff;
+    opacity: 0;
+    transition: transform 0.5s, opacity 0.5s;
+    transform: translate(-50%, -50%) scaleY(0.5);
+  }
+
+  &:hover {
+    color: $BTN_COLOR;
+
+    &::after {
+      opacity: 1;
+      transform: translate(-50%, -50%) scaleY(1) rotateX(360deg);
+    }
+  }
+}
+
+.c-hover__gradation {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-image: linear-gradient(90deg, #5e8af3 15%, #f33ddf);
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
+    transition: 0.5s opacity;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0;
+    }
+  }
+}
+
+.c-hover__gradation-border {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, #5e8af3 25%, #f33ddf 75%, #5e8af3);
+  background-position-x: -40px;
+  background-origin: border-box;
+  background-size: 110%;
+
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    content: "";
+    background: #fff;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover {
+    animation: gradation-border 2s linear infinite;
+  }
+}
+
+@keyframes gradation-border {
+  to {
+    background-position-x: 300px;
+  }
+}
+
+.c-hover__focus {
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
+  transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
+  z-index: 0;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: $BTN_COLOR;
+    background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
+    opacity: 0;
+    transition: 0.5s opacity, 0.5s transform;
+    transform: scale(1.1);
+  }
+
+  &:hover {
+    color: #fff;
+    border-color: rgba(164, 46, 207, 0);
+    box-shadow: 0 0 30px rgba(128, 128, 128, 0.2);
+
+    &::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

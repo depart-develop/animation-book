@@ -1,0 +1,53 @@
+.c-hamburger {
+  position: relative;
+  width: 2.5em;
+  height: 1.87em;
+  padding: 0.31em;
+  overflow: hidden;
+  background: none;
+  border: none;
+}
+
+.c-hamburger span,
+.c-hamburger::before,
+.c-hamburger::after {
+  position: absolute;
+  left: 0.31em;
+  display: block;
+  width: calc(100% - 0.62em);
+  height: 3px;
+  text-indent: -10000px;
+  content: "";
+  background: #528fe2;
+  border-radius: 3em;
+  transition: 0.3s ease all;
+}
+
+.c-hamburger::before {
+  top: 0.31em;
+}
+
+.c-hamburger span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.c-hamburger::after {
+  top: calc(100% - 0.31em);
+  transform: translateY(-100%);
+}
+
+.c-hamburger--rotate02 {
+  &.is-active {
+    & span,
+    &::before {
+      top: 50%;
+      transform: translateY(-50%) rotate(135deg);
+    }
+
+    &::after {
+      top: 50%;
+      transform: translateY(-50%) rotate(-135deg);
+    }
+  }
+}

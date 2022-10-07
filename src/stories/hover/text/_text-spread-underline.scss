@@ -1,0 +1,32 @@
+%c-txt {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.c-txt {
+  @extend %c-txt;
+}
+
+.c-hover__spread-underline {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    border-bottom: 1px solid #000;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}

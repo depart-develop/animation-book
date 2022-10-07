@@ -1,0 +1,13 @@
+.p-scroll-heading {
+  font-size: 60px;
+  letter-spacing: 0.05em;
+  color: #333;
+
+  &--shadow {
+    transition: text-shadow 0.5s;
+
+    &.is-active {
+      text-shadow: 4px 4px 0px #fff, 7px 7px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+}

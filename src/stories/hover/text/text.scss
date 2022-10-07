@@ -1,0 +1,161 @@
+%c-txt {
+  display: inline-block;
+  font-size: 16px;
+}
+
+.c-txt {
+  @extend %c-txt;
+}
+
+.c-txt__arrow {
+  @extend %c-txt;
+
+  &::after {
+    display: inline-block;
+    width: 0.64em;
+    height: 0.64em;
+    content: "";
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    transform: rotate(45deg);
+  }
+}
+
+.c-hover__opacity {
+  cursor: pointer;
+  transition: 0.3s opacity;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+.c-hover__underline {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(#000, 0);
+  transition: 0.2s border;
+
+  &:hover {
+    border-bottom: 1px solid rgba(#000, 1);
+  }
+}
+
+.c-hover__no-underline {
+  cursor: pointer;
+  border-bottom: 1px solid rgba(#000, 1);
+  transition: 0.2s border;
+
+  &:hover {
+    border-bottom: 1px solid rgba(#000, 0);
+  }
+}
+
+.c-hover__spread-underline {
+  position: relative;
+  cursor: pointer;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    border-bottom: 1px solid #000;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+
+  &:hover {
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.c-hover__spread-line {
+  position: relative;
+  cursor: pointer;
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    border-bottom: 1px solid #000;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+
+  &::before {
+    top: 0;
+    transform-origin: left;
+  }
+
+  &::after {
+    bottom: 0;
+    transform-origin: right;
+  }
+
+  &:hover {
+    &::before,
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.c-hover__spread-linetxt {
+  position: relative;
+  display: block;
+  width: 18.75em;
+  text-align: center;
+  letter-spacing: 0;
+  cursor: pointer;
+  transition: 0.3s letter-spacing;
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    border-bottom: 1px solid #000;
+    transition: transform 0.3s;
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:hover {
+    letter-spacing: 0.2em;
+    &::before,
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.c-hover__arrow {
+  cursor: pointer;
+
+  &::after {
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(5px) rotate(45deg);
+    }
+  }
+}

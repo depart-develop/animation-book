@@ -1,0 +1,64 @@
+.c-formparts__radio {
+  display: flex;
+  align-items: baseline;
+  cursor: pointer;
+}
+
+.c-formparts__radio-item {
+  display: none;
+}
+
+.c-radio-btn {
+  position: relative;
+  top: 5px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  overflow: hidden;
+  content: '';
+  border: 1px solid #a42ecf;
+  border-radius: 50px;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 12px;
+    height: 12px;
+    content: '';
+    background-color: #fff;
+    border-radius: 100px;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    content: '';
+    background-color: rgba(#a42ecf, 0.5);
+    border-radius: 100px;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+
+.c-radio-btn--scale {
+  &::before {
+    transition: 0.4s ease;
+    transform: translate(-50%, -50%) scale(0);
+  }
+}
+.c-formparts__radio-item {
+  &:checked {
+    + .c-radio-btn--scale {
+      animation: checkboxFrame 0.4s forwards;
+      &::before {
+        transition-delay: 0.25s;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}

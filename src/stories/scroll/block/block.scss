@@ -1,0 +1,77 @@
+.l-scroll-wrapper {
+  height: 1000px;
+  padding-top: 500px;
+}
+
+.l-block-wrapper {
+  display: flex;
+}
+
+.p-scroll-box {
+  border-top: #a42ecf solid 2px;
+  transition: 0.3s background-color;
+
+  &.is-active {
+    background: #edcef8;
+  }
+}
+
+.p-scroll-box {
+  padding: 20px 0;
+  font-size: 16px;
+  border-top: #a42ecf solid 2px;
+}
+
+.p-scroll-block {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #a42ecf;
+  transition: 0.3s background-color;
+
+  &.is-active {
+    background: #edcef8;
+  }
+}
+
+.p-svg-graph {
+  svg {
+    width: 100px;
+    height: auto;
+  }
+
+  path {
+    transition: 0.3s;
+    transform: scaleY(0);
+    transform-origin: bottom center;
+  }
+
+  path.is-active {
+    transform: scaleY(1);
+    transform-origin: 100% 100%;
+  }
+}
+
+.p-svg-circle-graph {
+  svg {
+    width: 200px;
+    height: auto;
+
+    path {
+      stroke-dasharray: 0 150;
+    }
+  }
+
+  path.is-active {
+    animation: circle 2s forwards cubic-bezier(0, 0.82, 0.63, 1);
+  }
+}
+
+@keyframes circle {
+  0% {
+    stroke-dasharray: 0 150;
+  }
+  99.9%,
+  to {
+    stroke-dasharray: 150 150;
+  }
+}

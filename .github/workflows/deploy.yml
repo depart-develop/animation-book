@@ -2,9 +2,11 @@ name: Deploy
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 permissions:
   contents: read
@@ -38,6 +40,11 @@ jobs:
     - name: Build
       run: npm run release --if-present
 
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: 'dist'
+
   deploy:
     needs: build
     environment:
@@ -46,16 +53,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
       - name: Setup Pages
         uses: actions/configure-pages@v2
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment

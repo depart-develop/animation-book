@@ -16,7 +16,8 @@
     "start": "npm run storybook",
     "build": "npm run build-storybook",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "release": "build-storybook -s public -o ./dist"
   },
   "eslintConfig": {
     "extends": [

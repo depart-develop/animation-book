@@ -36,7 +36,7 @@ jobs:
       run: npm ci
 
     - name: Build
-      run: npm run build --if-present
+      run: npm run release --if-present
 
   deploy:
     needs: build
@@ -55,7 +55,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
-          path: 'storybook-static'
+          path: 'dist'
 
       - name: Deploy to GitHub Pages
         id: deployment

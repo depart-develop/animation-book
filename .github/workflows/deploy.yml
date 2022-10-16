@@ -39,8 +39,8 @@ jobs:
 
     - name: Build
       run: |
-      npm run release --if-present
-      ls -la
+        npm run release --if-present
+        ls -la
 
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1

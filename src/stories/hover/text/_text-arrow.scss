@@ -1,10 +1,8 @@
-%c-txt {
+.c-txt-arrow {
   display: inline-block;
   font-size: 16px;
-}
-
-.c-txt__arrow {
-  @extend %c-txt;
+  text-decoration: none;
+  color: #000;
 
   &::after {
     display: inline-block;
@@ -14,13 +12,6 @@
     border-top: 2px solid #000;
     border-right: 2px solid #000;
     transform: rotate(45deg);
-  }
-}
-
-.c-hover__arrow {
-  cursor: pointer;
-
-  &::after {
     transition: transform 0.3s;
   }
 

@@ -1,18 +1,12 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-hover__bulk-up {
+.c-btn--bulk-up {
   cursor: pointer;
   transition: transform 0.3s;
 

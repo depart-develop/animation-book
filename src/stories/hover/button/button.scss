@@ -1,43 +1,28 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-btn-gradation {
-  @extend %c-btn;
-  color: #fff;
-}
-
-.c-btn-norborder {
-  @extend %c-btn;
-}
-
-.c-hover__inversion {
-  color: $BTN_COLOR;
+.c-btn--inversion {
+  color: #a42ecf;
   cursor: pointer;
   background-color: #fff;
   transition: 0.3s background-color;
 
   &:hover {
     color: #fff;
-    background-color: $BTN_COLOR;
+    background-color: #a42ecf;
   }
 }
 
-%c-hover__fill {
+%c-btn--fill {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  color: $BTN_COLOR;
+  color: #a42ecf;
   cursor: pointer;
   background-color: #fff;
   transition: 0.5s color cubic-bezier(0, 0.82, 0.57, 1.01);
@@ -51,7 +36,7 @@ $BTN_COLOR: #a42ecf;
     width: 120%;
     height: 100%;
     content: "";
-    background: $BTN_COLOR;
+    background: #a42ecf;
     transition: 0.5s transform cubic-bezier(0, 0.82, 0.57, 1.01);
     transform: scaleX(0);
     transform-origin: left top;
@@ -66,14 +51,14 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__fill,
-.c-hover__fill-toright,
-.c-hover__fill-skew,
-.c-hover__fill-skew-toright {
-  @extend %c-hover__fill;
+.c-btn--fill,
+.c-btn--fill-toright,
+.c-btn--fill-skew,
+.c-btn--fill-skew-toright {
+  @extend %c-btn--fill;
 }
 
-.c-hover__fill-toright {
+.c-btn--fill-toright {
   &::before {
     transform: scaleX(0);
     transform-origin: right top;
@@ -87,7 +72,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__fill-skew {
+.c-btn--fill-skew {
   &::before {
     transform: scaleX(0) skewX(-25deg);
   }
@@ -99,7 +84,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__fill-skew-toright {
+.c-btn--fill-skew-toright {
   &::before {
     transform: scaleX(0) skewX(-25deg);
     transform-origin: right top;
@@ -113,7 +98,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__bulk-up {
+.c-btn--bulk-up {
   cursor: pointer;
   transition: transform 0.3s;
 
@@ -122,7 +107,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__float {
+.c-btn--float {
   cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
@@ -133,7 +118,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__double-border {
+.c-btn--double-border {
   position: relative;
   z-index: 1;
   color: #fff;
@@ -149,7 +134,7 @@ $BTN_COLOR: #a42ecf;
     width: 100%;
     height: 100%;
     content: "";
-    background: $BTN_COLOR;
+    background: #a42ecf;
     transition: 0.3s width, 0.3s height;
     transform: translate(-50%, -50%);
   }
@@ -162,12 +147,12 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__card {
+.c-btn--card {
   position: relative;
   z-index: 1;
   color: #fff;
   cursor: pointer;
-  background: $BTN_COLOR;
+  background: #a42ecf;
   transition: 0.5s color;
 
   &::after {
@@ -186,7 +171,7 @@ $BTN_COLOR: #a42ecf;
   }
 
   &:hover {
-    color: $BTN_COLOR;
+    color: #a42ecf;
 
     &::after {
       opacity: 1;
@@ -195,11 +180,13 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__gradation {
+.c-btn--gradation {
   position: relative;
   z-index: 1;
   cursor: pointer;
   background-image: linear-gradient(90deg, #5e8af3 15%, #f33ddf);
+  border: 0;
+  color: #fff;
 
   &::after {
     position: absolute;
@@ -210,7 +197,7 @@ $BTN_COLOR: #a42ecf;
     width: 100%;
     height: 100%;
     content: "";
-    background: $BTN_COLOR;
+    background: #a42ecf;
     background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
     transition: 0.5s opacity;
   }
@@ -222,7 +209,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__gradation-border {
+.c-btn--gradation-border {
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -255,7 +242,7 @@ $BTN_COLOR: #a42ecf;
   }
 }
 
-.c-hover__focus {
+.c-btn--focus {
   position: relative;
   cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
@@ -271,7 +258,7 @@ $BTN_COLOR: #a42ecf;
     width: 100%;
     height: 100%;
     content: "";
-    background: $BTN_COLOR;
+    background: #a42ecf;
     background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
     opacity: 0;
     transition: 0.5s opacity, 0.5s transform;

@@ -110,7 +110,6 @@ Txt.parameters = {
   }
 };
 Txt.args = {
-  base: 'c-card__shadow',
   zoom: true,
   type: 'txt',
   moreText: true,
@@ -125,7 +124,6 @@ Slidetxt.parameters = {
   }
 };
 Slidetxt.args = {
-  base: 'c-card__shadow',
   zoom: true,
   type: 'slidetxt',
   moreText: true,

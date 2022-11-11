@@ -1,14 +1,11 @@
-%c-txt {
+.c-txt {
   display: inline-block;
   font-size: 16px;
+  text-decoration: none;
+  color: #000;
 }
 
-.c-txt {
-  @extend %c-txt;
-}
-
-.c-hover__underline {
-  cursor: pointer;
+.c-txt--underline {
   border-bottom: 1px solid rgba(#000, 0);
   transition: 0.2s border;
 

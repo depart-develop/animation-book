@@ -10,13 +10,11 @@ export const Text = ({ base, type, ...props }) => {
   }
   
   if (type) {
-    classNames.push(`c-hover__${type}`);
+    classNames.push(`${base}--${type}`);
   }
   
   return (
-    <a className={classNames.join(' ')}
-    {...props}
-    >テキストリンク</a>
+    <a href="dummy" className={classNames.join(' ')} {...props}>テキストリンク</a>
   );
 };
 

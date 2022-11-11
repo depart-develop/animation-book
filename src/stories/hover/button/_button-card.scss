@@ -1,23 +1,17 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-hover__card {
+.c-btn--card {
   position: relative;
   z-index: 1;
   color: #fff;
   cursor: pointer;
-  background: $BTN_COLOR;
+  background: #a42ecf;
   transition: 0.5s color;
 
   &::after {
@@ -36,7 +30,7 @@ $BTN_COLOR: #a42ecf;
   }
 
   &:hover {
-    color: $BTN_COLOR;
+    color: #a42ecf;
 
     &::after {
       opacity: 1;

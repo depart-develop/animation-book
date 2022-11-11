@@ -10,7 +10,7 @@ export const Button = ({ base, type, ...props }) => {
   }
   
   if (type) {
-    classNames.push(`c-hover__${type}`);
+    classNames.push(`c-btn--${type}`);
   }
   
   return (

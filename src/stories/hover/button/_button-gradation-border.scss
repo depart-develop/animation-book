@@ -1,17 +1,12 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn-norborder {
-  @extend %c-btn;
-}
-
-.c-hover__gradation-border {
+.c-btn--gradation-border {
   position: relative;
   z-index: 1;
   cursor: pointer;

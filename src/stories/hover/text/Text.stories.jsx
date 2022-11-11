@@ -116,6 +116,6 @@ Arrow.parameters = {
   }
 };
 Arrow.args = {
-  base: 'c-txt__arrow',
+  base: 'c-txt-arrow',
   type: 'arrow',
 };

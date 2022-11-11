@@ -4,8 +4,8 @@ import { Hamburger } from './Hamburger';
 
 /* eslint-disable import/no-webpack-loader-syntax */
 import scss from '!!raw-loader!./hamburger.scss';
-import scssRotate01 from '!!raw-loader!./_hamburger-rotate01.scss';
-import scssRotate02 from '!!raw-loader!./_hamburger-rotate02.scss';
+import scssRotate from '!!raw-loader!./_hamburger-rotate.scss';
+import scssReverse from '!!raw-loader!./_hamburger-reverse.scss';
 import scssFade from '!!raw-loader!./_hamburger-fade.scss';
 import scssCongregate from '!!raw-loader!./_hamburger-congregate.scss';
 import HamburgerDoc from './Hamburger.mdx'
@@ -32,28 +32,28 @@ const Template = (args) => <Hamburger {...args} />;
 // デフォルトのStoryを出力
 // export const Default = Template.bind({});
 
-export const Rotate01 = Template.bind({});
-Rotate01.parameters = {
+export const Rotate = Template.bind({});
+Rotate.parameters = {
   ...parameters,
   componentSource: {
-    code: scssRotate01,
+    code: scssRotate,
     language: 'scss',
   }
 };
-Rotate01.args = {
-  type: 'rotate01',
+Rotate.args = {
+  type: 'rotate',
 };
 
-export const Rotate02 = Template.bind({});
-Rotate02.parameters = {
+export const Reverse = Template.bind({});
+Reverse.parameters = {
   ...parameters,
   componentSource: {
-    code: scssRotate02,
+    code: scssReverse,
     language: 'scss',
   }
 };
-Rotate02.args = {
-  type: 'rotate02',
+Reverse.args = {
+  type: 'reverse',
 };
 
 export const Fade = Template.bind({});

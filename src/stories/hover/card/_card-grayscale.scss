@@ -1,8 +1,13 @@
-%c-card {
+.c-card {
   display: inline-block;
   width: 300px;
   padding: 10px;
   font-size: 16px;
+
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
 }
 
 .c-card__txt {
@@ -11,15 +16,6 @@
 
 .c-card__img {
   overflow: hidden;
-}
-
-.c-card {
-  @extend %c-card;
-
-  img {
-    width: 100%;
-    vertical-align: bottom;
-  }
 }
 
 .c-card-hover--grayscale {

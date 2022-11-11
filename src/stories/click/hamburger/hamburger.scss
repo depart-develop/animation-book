@@ -37,24 +37,24 @@
   transform: translateY(-100%);
 }
 
-.c-hamburger--rotate01.is-active span,
-.c-hamburger--rotate01.is-active::before {
+.c-hamburger--rotate.is-active span,
+.c-hamburger--rotate.is-active::before {
   top: 50%;
   transform: translateY(-50%) rotate(135deg);
 }
 
-.c-hamburger--rotate01.is-active::after {
+.c-hamburger--rotate.is-active::after {
   top: 50%;
   transform: translateY(-50%) rotate(225deg);
 }
 
-.c-hamburger--rotate02.is-active span,
-.c-hamburger--rotate02.is-active::before {
+.c-hamburger--reverse.is-active span,
+.c-hamburger--reverse.is-active::before {
   top: 50%;
   transform: translateY(-50%) rotate(135deg);
 }
 
-.c-hamburger--rotate02.is-active::after {
+.c-hamburger--reverse.is-active::after {
   top: 50%;
   transform: translateY(-50%) rotate(-135deg);
 }

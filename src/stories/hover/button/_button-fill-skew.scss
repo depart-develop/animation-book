@@ -1,34 +1,16 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-hover__inversion {
-  color: $BTN_COLOR;
-  cursor: pointer;
-  background-color: #fff;
-  transition: 0.3s background-color;
-
-  &:hover {
-    color: #fff;
-    background-color: $BTN_COLOR;
-  }
-}
-
-%c-hover__fill {
+.c-btn--fill-skew {
   position: relative;
   z-index: 1;
   overflow: hidden;
-  color: $BTN_COLOR;
+  color: #a42ecf;
   cursor: pointer;
   background-color: #fff;
   transition: 0.5s color cubic-bezier(0, 0.82, 0.57, 1.01);
@@ -42,7 +24,7 @@ $BTN_COLOR: #a42ecf;
     width: 120%;
     height: 100%;
     content: "";
-    background: $BTN_COLOR;
+    background: #a42ecf;
     transition: 0.5s transform cubic-bezier(0, 0.82, 0.57, 1.01);
     transform: scaleX(0);
     transform-origin: left top;
@@ -55,10 +37,6 @@ $BTN_COLOR: #a42ecf;
       transform: scaleX(1);
     }
   }
-}
-
-.c-hover__fill-skew {
-  @extend %c-hover__fill;
 
   &::before {
     transform: scaleX(0) skewX(-25deg);

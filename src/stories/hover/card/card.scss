@@ -1,59 +1,60 @@
-%c-card {
+.c-card {
   display: inline-block;
   width: 300px;
   padding: 10px;
   font-size: 16px;
+
+  img {
+    width: 100%;
+    vertical-align: bottom;
+  }
 }
+
 .c-card__txt {
   padding-top: 10px;
 }
+
 .c-card__img {
   overflow: hidden;
 }
-.c-card {
-  @extend %c-card;
-  img {
-    width: 100%;
-    vertical-align: bottom;
-  }
-}
-.c-card__shadow {
-  box-shadow: 0 0 5px rgba(#000, 0.2);
-  @extend %c-card;
-  img {
-    width: 100%;
-    vertical-align: bottom;
-  }
-}
+
 .c-card-hover--grayscale {
   cursor: pointer;
+
   img {
     filter: grayscale(100%);
     transition: filter 0.5s;
   }
+
   &:hover {
     img {
       filter: grayscale(0);
     }
   }
 }
+
 .c-card-hover--bright {
   cursor: pointer;
+
   img {
     filter: brightness(100%);
     transition: filter 0.5s;
   }
+
   &:hover {
     img {
       filter: brightness(1.2);
     }
   }
 }
+
 .c-card-hover--zoom {
   cursor: pointer;
+
   img {
     transition: 2s;
   }
+
   &:hover {
     img {
       transform: scale(1.1);
@@ -65,23 +66,30 @@
   cursor: pointer;
   box-shadow: 0 0 5px rgba(#000, 0.2);
   transition: transform 0.5s, box-shadow 0.5s;
+
   &:hover {
     box-shadow: 0 0 30px #80808033;
     transform: scale(1.05);
   }
 }
+
 .c-card-hover--push {
   cursor: pointer;
   box-shadow: 0 0 5px rgba(#000, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
+
   &:hover {
     box-shadow: none;
     transform: scale(0.97);
   }
 }
+
 .c-card-hover--txt {
+  box-shadow: 0 0 5px rgba(#000, 0.2);
+
   .c-card__img {
     position: relative;
+
     .c-card-hover--txt__more {
       position: absolute;
       top: 0;
@@ -98,6 +106,7 @@
       transition: 0.5s opacity;
     }
   }
+
   &:hover {
     .c-card__img {
       .c-card-hover--txt__more {
@@ -106,9 +115,13 @@
     }
   }
 }
+
 .c-card-hover--slidetxt {
+  box-shadow: 0 0 5px rgba(#000, 0.2);
+
   .c-card__img {
     position: relative;
+
     .c-card-hover--txt__more {
       position: absolute;
       bottom: 0;
@@ -125,6 +138,7 @@
       transform: scaleY(0);
     }
   }
+
   &:hover {
     .c-card__img {
       .c-card-hover--txt__more {

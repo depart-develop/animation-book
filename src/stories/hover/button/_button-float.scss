@@ -1,18 +1,12 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-hover__float {
+.c-btn--float {
   cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;

@@ -14,14 +14,10 @@ export const Radio = ({ base, type, ...props }) => {
   }
 
   return (
-    <label for={`checkbox_${type}_01`} class="c-formparts__radio">
-      <input
-        id={`checkbox_${type}_01`}
-        type="radio"
-        class="c-formparts__radio-item"
-      />
+    <label class="c-form-radio">
+      <input type="radio" class="c-form-radio__input" />
       <span className={classNames.join(" ")} {...props}></span>
-      <span class="c-formparts__radio-txt">テキスト</span>
+      <span class="c-form-radio__txt">テキスト</span>
     </label>
   );
 };

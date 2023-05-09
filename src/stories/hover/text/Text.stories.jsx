@@ -11,7 +11,8 @@ import scssSpreadUnderline from '!!raw-loader!./_text-spread-underline.scss';
 import scssSpreadLine from '!!raw-loader!./_text-spread-line.scss';
 import scssSpreadLinetxt from '!!raw-loader!./_text-spread-linetxt.scss';
 import scssArrow from '!!raw-loader!./_text-arrow.scss';
-import TextDoc from './Text.mdx'
+import scssBorderArrow from '!!raw-loader!./_text-border-arrow.scss';
+import TextDoc from './Text.mdx';
 
 const parameters = {
   componentSource: {
@@ -20,7 +21,7 @@ const parameters = {
   },
   docs: {
     page: TextDoc,
-  }
+  },
 };
 
 // Story設定
@@ -41,7 +42,7 @@ Opacity.parameters = {
   componentSource: {
     code: scssOpacity,
     language: 'scss',
-  }
+  },
 };
 Opacity.args = {
   type: 'opacity',
@@ -53,7 +54,7 @@ Underline.parameters = {
   componentSource: {
     code: scssUnderline,
     language: 'scss',
-  }
+  },
 };
 Underline.args = {
   type: 'underline',
@@ -65,7 +66,7 @@ NoUnderline.parameters = {
   componentSource: {
     code: scssNoUnderline,
     language: 'scss',
-  }
+  },
 };
 NoUnderline.args = {
   type: 'no-underline',
@@ -77,7 +78,7 @@ SpreadUnderline.parameters = {
   componentSource: {
     code: scssSpreadUnderline,
     language: 'scss',
-  }
+  },
 };
 SpreadUnderline.args = {
   type: 'spread-underline',
@@ -89,7 +90,7 @@ SpreadLine.parameters = {
   componentSource: {
     code: scssSpreadLine,
     language: 'scss',
-  }
+  },
 };
 SpreadLine.args = {
   type: 'spread-line',
@@ -101,7 +102,7 @@ SpreadLinetxt.parameters = {
   componentSource: {
     code: scssSpreadLinetxt,
     language: 'scss',
-  }
+  },
 };
 SpreadLinetxt.args = {
   type: 'spread-linetxt',
@@ -113,9 +114,21 @@ Arrow.parameters = {
   componentSource: {
     code: scssArrow,
     language: 'scss',
-  }
+  },
 };
 Arrow.args = {
   base: 'c-txt__arrow',
   type: 'arrow',
+};
+export const BorderArrow = Template.bind({});
+BorderArrow.parameters = {
+  ...parameters,
+  componentSource: {
+    code: scssBorderArrow,
+    language: 'scss',
+  },
+};
+BorderArrow.args = {
+  type: 'border-arrow',
+  pt: 1,
 };

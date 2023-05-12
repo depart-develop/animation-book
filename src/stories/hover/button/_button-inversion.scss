@@ -1,26 +1,20 @@
-%c-btn {
+.c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
   cursor: pointer;
+  border: 1px solid #a42ecf;
 }
 
-$BTN_COLOR: #a42ecf;
-
-.c-btn {
-  @extend %c-btn;
-  border: 1px solid $BTN_COLOR;
-}
-
-.c-hover__inversion {
-  color: $BTN_COLOR;
+.c-btn--inversion {
+  color: #a42ecf;
   cursor: pointer;
   background-color: #fff;
   transition: 0.3s background-color;
 
   &:hover {
     color: #fff;
-    background-color: $BTN_COLOR;
+    background-color: #a42ecf;
   }
 }

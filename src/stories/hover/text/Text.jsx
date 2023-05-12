@@ -10,7 +10,7 @@ export const Text = ({ base, type, pt, ...props }) => {
   }
 
   if (type) {
-    classNames.push(`c-hover__${type}`);
+    classNames.push(`${base}--${type}`);
   }
   if (pt == 1) {
     return (
@@ -22,9 +22,7 @@ export const Text = ({ base, type, pt, ...props }) => {
   }
 
   return (
-    <a className={classNames.join(' ')} {...props}>
-      テキストリンク
-    </a>
+    <a href="dummy" className={classNames.join(' ')} {...props}>テキストリンク</a>
   );
 };
 

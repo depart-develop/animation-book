@@ -16,13 +16,13 @@ export const Scrolldown = ({ base, type, ...props }) => {
   return (
     <p className={`${classNames.join(' ')}`} {...props}>
       <span>Scroll Down</span>
-      { type === 'p-scrolldown--chevron' && <span className="chevron"><span></span><span></span><span></span></span> }
+      { type === 'c-scrolldown--chevron' && <span className="chevron"><span></span><span></span><span></span></span> }
     </p>
   );
 };
 
 // デフォルトの状態
 Scrolldown.defaultProps = {
-  base: 'p-scrolldown',
+  base: 'c-scrolldown',
   type: '',
 };

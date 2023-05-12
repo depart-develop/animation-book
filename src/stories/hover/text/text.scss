@@ -1,14 +1,15 @@
-%c-txt {
+.c-txt {
   display: inline-block;
   font-size: 16px;
+  text-decoration: none;
+  color: #000;
 }
 
-.c-txt {
-  @extend %c-txt;
-}
-
-.c-txt__arrow {
-  @extend %c-txt;
+.c-txt-arrow {
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
+  color: #000;
 
   &::after {
     display: inline-block;
@@ -18,11 +19,17 @@
     border-top: 2px solid #000;
     border-right: 2px solid #000;
     transform: rotate(45deg);
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      transform: translateX(5px) rotate(45deg);
+    }
   }
 }
 
-.c-hover__opacity {
-  cursor: pointer;
+.c-txt--opacity {
   transition: 0.3s opacity;
 
   &:hover {
@@ -30,8 +37,7 @@
   }
 }
 
-.c-hover__underline {
-  cursor: pointer;
+.c-txt--underline {
   border-bottom: 1px solid rgba(#000, 0);
   transition: 0.2s border;
 
@@ -40,8 +46,7 @@
   }
 }
 
-.c-hover__no-underline {
-  cursor: pointer;
+.c-txt--no-underline {
   border-bottom: 1px solid rgba(#000, 1);
   transition: 0.2s border;
 
@@ -50,9 +55,8 @@
   }
 }
 
-.c-hover__spread-underline {
+.c-txt--spread-underline {
   position: relative;
-  cursor: pointer;
 
   &:after {
     position: absolute;
@@ -74,9 +78,8 @@
   }
 }
 
-.c-hover__spread-line {
+.c-txt--spread-line {
   position: relative;
-  cursor: pointer;
   &::before,
   &::after {
     position: absolute;
@@ -108,13 +111,12 @@
   }
 }
 
-.c-hover__spread-linetxt {
+.c-txt--spread-linetxt {
   position: relative;
   display: block;
   width: 18.75em;
   text-align: center;
   letter-spacing: 0;
-  cursor: pointer;
   transition: 0.3s letter-spacing;
   &::before,
   &::after {

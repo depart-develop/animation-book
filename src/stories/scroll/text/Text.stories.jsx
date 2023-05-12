@@ -3,7 +3,7 @@ import React from 'react';
 import { Text } from './Text';
 
 /* eslint-disable import/no-webpack-loader-syntax */
-import scss from '!!raw-loader!./text.scss';
+import scss from '!!raw-loader!./_text-marker.scss';
 import TextDoc from './Text.mdx'
 
 const parameters = {

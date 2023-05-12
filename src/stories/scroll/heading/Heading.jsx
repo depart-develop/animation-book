@@ -15,7 +15,7 @@ export const Heading = ({ base, type, ...props }) => {
   }
   
   if (type) {
-    classNames.push(`p-scroll-heading--${type}`);
+    classNames.push(`c-scroll-heading--${type}`);
   }
   
   const effectTarget = React.useRef(null);
@@ -48,6 +48,6 @@ export const Heading = ({ base, type, ...props }) => {
 
 // デフォルトの状態
 Heading.defaultProps = {
-  base: 'p-scroll-heading',
+  base: 'c-scroll-heading',
   type: '',
 };

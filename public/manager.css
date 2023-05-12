@@ -6,3 +6,11 @@
   content: "SCSS";
   font-size: 13px;
 }
+
+.sidebar-header > div {
+  margin-right: 10px;
+}
+
+.sidebar-header > div:last-child {
+  margin-right: 0;
+}

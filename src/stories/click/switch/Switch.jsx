@@ -10,23 +10,19 @@ export const Switch = ({ base, type, ...props }) => {
   }
 
   if (type) {
-    classNames.push(`c-switch-btn--${type}`);
+    classNames.push(`c-switch--${type}`);
   }
 
   return (
-    <label for={`checkbox_${type}`}>
-      <input
-        id={`checkbox_${type}`}
-        type="checkbox"
-        class="c-switch-checkbox"
-      />
-      <span className={classNames.join(" ")} {...props}></span>
+    <label className={classNames.join(" ")} {...props}>
+      <input type="checkbox" class="c-switch__input" />
+      <span className="c-switch__btn"></span>
     </label>
   );
 };
 
 // デフォルトの状態
 Switch.defaultProps = {
-  base: "c-switch-btn",
+  base: "c-switch",
   type: "",
 };

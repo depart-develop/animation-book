@@ -1,19 +1,16 @@
-%c-txt {
+.c-txt {
   display: inline-block;
   font-size: 16px;
+  text-decoration: none;
+  color: #000;
 }
 
-.c-txt {
-  @extend %c-txt;
-}
-
-.c-hover__spread-linetxt {
+.c-txt--spread-linetxt {
   position: relative;
   display: block;
   width: 18.75em;
   text-align: center;
   letter-spacing: 0;
-  cursor: pointer;
   transition: 0.3s letter-spacing;
   &::before,
   &::after {

@@ -15,7 +15,7 @@ export const Text = ({ base, type, ...props }) => {
   }
   
   if (type) {
-    classNames.push(`p-scroll-text--${type}`);
+    classNames.push(`c-scroll-text--${type}`);
   }
   
   const effectTarget = React.useRef(null);
@@ -40,8 +40,8 @@ export const Text = ({ base, type, ...props }) => {
   return (
     <div className='l-scroll-wrapper'>
       <p className={`${classNames.join(' ')}`} {...props} ref={effectTarget}>
-        <span className={`${base}__text`}>ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト<br/>ダミーテキスト
-        ダミーテキストダミーテキストダミーテキストダミーテキストダミーテキストダミーテキスト</span>
+        <span className={`${base}__text`}>画面中央までスクロールされるとアニメーションが開始する。<br/>
+        複数行のテキストにも対応。</span>
       </p>
     </div>
   );
@@ -49,6 +49,6 @@ export const Text = ({ base, type, ...props }) => {
 
 // デフォルトの状態
 Text.defaultProps = {
-  base: 'p-scroll-text',
+  base: 'c-scroll-text',
   type: '',
 };

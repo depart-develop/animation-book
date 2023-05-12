@@ -40,7 +40,7 @@ Line.parameters = {
   }
 };
 Line.args = {
-  type: 'p-scrolldown--line',
+  type: 'c-scrolldown--line',
 };
 
 export const Mouse = Template.bind({});
@@ -52,7 +52,7 @@ Mouse.parameters = {
   }
 };
 Mouse.args = {
-  type: 'p-scrolldown--mouse',
+  type: 'c-scrolldown--mouse',
 };
 
 export const Chevron = Template.bind({});
@@ -64,5 +64,5 @@ Chevron.parameters = {
   }
 };
 Chevron.args = {
-  type: 'p-scrolldown--chevron',
+  type: 'c-scrolldown--chevron',
 };

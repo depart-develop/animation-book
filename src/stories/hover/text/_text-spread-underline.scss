@@ -1,15 +1,12 @@
-%c-txt {
+.c-txt {
   display: inline-block;
   font-size: 16px;
+  text-decoration: none;
+  color: #000;
 }
 
-.c-txt {
-  @extend %c-txt;
-}
-
-.c-hover__spread-underline {
+.c-txt--spread-underline {
   position: relative;
-  cursor: pointer;
 
   &:after {
     position: absolute;

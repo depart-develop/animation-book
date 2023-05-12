@@ -3,12 +3,12 @@
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  cursor: pointer;
   border: 1px solid #a42ecf;
 }
 
-.c-btn--forcus {
+.c-btn--focus {
   position: relative;
-  cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
   transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
   z-index: 0;

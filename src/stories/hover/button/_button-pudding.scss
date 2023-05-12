@@ -1,0 +1,35 @@
+%c-btn {
+  display: block;
+  width: 300px;
+  padding: 20px 0;
+  text-align: center;
+  cursor: pointer;
+}
+
+$BTN_COLOR: #a42ecf;
+
+.c-btn {
+  @extend %c-btn;
+  border: 1px solid $BTN_COLOR;
+}
+
+.c-btn--pudding {
+  border-radius: 40px;
+  &:hover {
+    animation: pudding 2.6s ease-in-out;
+  }
+}
+
+@keyframes pudding {
+  5% {
+    transform: scale(1.05, 0.95);
+  }
+
+  10% {
+    transform: scale(0.95, 1.05) translateY(-2.5px);
+  }
+
+  15% {
+    transform: scale(1);
+  }
+}

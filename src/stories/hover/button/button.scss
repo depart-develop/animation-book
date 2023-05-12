@@ -1,20 +1,37 @@
-.c-btn {
+%c-btn {
   display: block;
   width: 300px;
   padding: 20px 0;
   text-align: center;
+  cursor: pointer;
   border: 1px solid #a42ecf;
 }
 
+$BTN_COLOR: #a42ecf;
+
+.c-btn {
+  @extend %c-btn;
+  border: 1px solid $BTN_COLOR;
+}
+
+.c-btn-gradation {
+  @extend %c-btn;
+  color: #fff;
+}
+
+.c-btn-norborder {
+  @extend %c-btn;
+}
+
 .c-btn--inversion {
-  color: #a42ecf;
+  color: $BTN_COLOR;
   cursor: pointer;
   background-color: #fff;
   transition: 0.3s background-color;
 
   &:hover {
     color: #fff;
-    background-color: #a42ecf;
+    background-color: $BTN_COLOR;
   }
 }
 
@@ -22,7 +39,7 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
-  color: #a42ecf;
+  color: $BTN_COLOR;
   cursor: pointer;
   background-color: #fff;
   transition: 0.5s color cubic-bezier(0, 0.82, 0.57, 1.01);
@@ -36,7 +53,7 @@
     width: 120%;
     height: 100%;
     content: "";
-    background: #a42ecf;
+    background: $BTN_COLOR;
     transition: 0.5s transform cubic-bezier(0, 0.82, 0.57, 1.01);
     transform: scaleX(0);
     transform-origin: left top;
@@ -99,7 +116,6 @@
 }
 
 .c-btn--bulk-up {
-  cursor: pointer;
   transition: transform 0.3s;
 
   &:hover {
@@ -108,7 +124,6 @@
 }
 
 .c-btn--float {
-  cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 
@@ -122,7 +137,6 @@
   position: relative;
   z-index: 1;
   color: #fff;
-  cursor: pointer;
   transition: 0.3s color;
 
   &::after {
@@ -134,7 +148,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background: #a42ecf;
+    background: $BTN_COLOR;
     transition: 0.3s width, 0.3s height;
     transform: translate(-50%, -50%);
   }
@@ -151,8 +165,8 @@
   position: relative;
   z-index: 1;
   color: #fff;
+  background: $BTN_COLOR;
   cursor: pointer;
-  background: #a42ecf;
   transition: 0.5s color;
 
   &::after {
@@ -171,7 +185,7 @@
   }
 
   &:hover {
-    color: #a42ecf;
+    color: $BTN_COLOR;
 
     &::after {
       opacity: 1;
@@ -183,7 +197,6 @@
 .c-btn--gradation {
   position: relative;
   z-index: 1;
-  cursor: pointer;
   background-image: linear-gradient(90deg, #5e8af3 15%, #f33ddf);
   border: 0;
   color: #fff;
@@ -197,7 +210,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background: #a42ecf;
+    background: $BTN_COLOR;
     background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
     transition: 0.5s opacity;
   }
@@ -212,7 +225,6 @@
 .c-btn--gradation-border {
   position: relative;
   z-index: 1;
-  cursor: pointer;
   background-image: linear-gradient(45deg, #5e8af3 25%, #f33ddf 75%, #5e8af3);
   background-position-x: -40px;
   background-origin: border-box;
@@ -244,7 +256,6 @@
 
 .c-btn--focus {
   position: relative;
-  cursor: pointer;
   box-shadow: 0 0 5px rgba(164, 46, 207, 0.2);
   transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
   z-index: 0;
@@ -258,7 +269,7 @@
     width: 100%;
     height: 100%;
     content: "";
-    background: #a42ecf;
+    background: $BTN_COLOR;
     background-image: linear-gradient(270deg, #5e8af3 15%, #f33ddf);
     opacity: 0;
     transition: 0.5s opacity, 0.5s transform;
@@ -274,5 +285,116 @@
       opacity: 1;
       transform: scale(1);
     }
+  }
+}
+.c-btn--arrow-scale {
+  background: $BTN_COLOR;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: #fff;
+  min-width: 200px;
+  position: relative;
+  text-decoration: none;
+  transition-duration: 0.3s;
+  transition-property: color, background-color, border-color;
+  span {
+    &::before,
+    &::after {
+      bottom: 0;
+      content: "";
+      transition: border-color 0.3s;
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      z-index: 1;
+    }
+
+    &::before {
+      border-top: 2px solid $BTN_COLOR;
+      height: 0;
+      width: 10px;
+      right: 28px;
+    }
+
+    &::after {
+      border-right: 2px solid $BTN_COLOR;
+      border-top: 2px solid $BTN_COLOR;
+      height: 6px;
+      transform: rotate(45deg);
+      width: 6px;
+      right: 27px;
+    }
+  }
+  &:after {
+    background: currentColor;
+    border-radius: 50%;
+    bottom: 0;
+    content: "";
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    transition-duration: 0.3s;
+    transition-property: background-color, transform;
+    height: 30px;
+    right: 18px;
+    width: 30px;
+  }
+  &:hover {
+    background: #da93f4;
+    transition: 0.3s background-color;
+    &:after {
+      transform: scale(1.385);
+    }
+  }
+}
+
+.c-btn--fill-circle {
+  position: relative;
+  border-radius: 40px;
+  transition: color 0.6s;
+  z-index: 0;
+  overflow: hidden;
+  &:after {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 240px;
+    height: 240px;
+    content: "";
+    background-color: $BTN_COLOR;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  &:hover {
+    color: #fff;
+    &::after {
+      transition: 0.6s ease-in-out;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(2);
+    }
+  }
+}
+.c-btn--pudding {
+  border-radius: 40px;
+  &:hover {
+    animation: pudding 2.6s ease-in-out;
+  }
+}
+
+@keyframes pudding {
+  5% {
+    transform: scale(1.05, 0.95);
+  }
+
+  10% {
+    transform: scale(0.95, 1.05) translateY(-2.5px);
+  }
+
+  15% {
+    transform: scale(1);
   }
 }

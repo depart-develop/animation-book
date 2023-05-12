@@ -1,0 +1,17 @@
+.c-accordion--cross-rotate {
+  &.is-active {
+    &:after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+    &::before {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+}
+.c-accordion--cross-scale {
+  &.is-active {
+    &::before {
+      transform: translateY(-50%) rotate(90deg) scale(0);
+    }
+  }
+}

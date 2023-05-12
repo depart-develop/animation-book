@@ -13,8 +13,8 @@ $BTN_COLOR: #a42ecf;
   border: 1px solid $BTN_COLOR;
 }
 
-.c-hover__arrow-scale {
-  background: #a42ecf;
+.c-btn--arrow-scale {
+  background: $BTN_COLOR;
   border: 1px solid transparent;
   border-radius: 999px;
   color: #fff;
@@ -37,15 +37,15 @@ $BTN_COLOR: #a42ecf;
     }
 
     &::before {
-      border-top: 2px solid #a42ecf;
+      border-top: 2px solid $BTN_COLOR;
       height: 0;
       width: 10px;
       right: 28px;
     }
 
     &::after {
-      border-right: 2px solid #a42ecf;
-      border-top: 2px solid #a42ecf;
+      border-right: 2px solid $BTN_COLOR;
+      border-top: 2px solid $BTN_COLOR;
       height: 6px;
       transform: rotate(45deg);
       width: 6px;
@@ -68,7 +68,7 @@ $BTN_COLOR: #a42ecf;
     width: 30px;
   }
   &:hover {
-    background: #da93f4;
+    background: $BTN_COLOR;
     transition: 0.3s background-color;
     &:after {
       transform: scale(1.385);

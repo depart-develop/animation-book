@@ -1,4 +1,5 @@
-.c-hover__border-arrow {
+$ACCENT_COLOR: #a42ecf;
+.c-txt--border-arrow {
   display: block;
   padding: 10px;
   position: relative;
@@ -19,7 +20,7 @@
     background-color: #f2f2f2;
   }
   &::after {
-    background-color: #a42ecf;
+    background-color: $ACCENT_COLOR;
     animation: border-arrow2 0.4s cubic-bezier(0, 0.24, 0.33, 0.99) 0s 1 normal
       forwards;
   }
@@ -29,7 +30,7 @@
         normal forwards;
     }
     .icon {
-      background-color: #a42ecf;
+      background-color: $ACCENT_COLOR;
       &::before,
       &::after {
         border-color: #fff;
@@ -54,7 +55,7 @@
     margin: auto 0;
     overflow: hidden;
     content: "";
-    border: 1px solid #a42ecf;
+    border: 1px solid $ACCENT_COLOR;
     border-radius: 50%;
     transition: 0.5s;
     transition-property: background;
@@ -68,8 +69,8 @@
       display: block;
       width: 6px;
       height: 6px;
-      border-top: 2px solid #a42ecf;
-      border-right: 2px solid #a42ecf;
+      border-top: 2px solid $ACCENT_COLOR;
+      border-right: 2px solid $ACCENT_COLOR;
       transform: translate(-50%, -50%) rotate(45deg);
       content: "";
       background-repeat: no-repeat;

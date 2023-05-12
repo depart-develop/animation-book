@@ -13,7 +13,7 @@ $BTN_COLOR: #a42ecf;
   border: 1px solid $BTN_COLOR;
 }
 
-.c-hover__pudding {
+.c-btn--pudding {
   border-radius: 40px;
   &:hover {
     animation: pudding 2.6s ease-in-out;
